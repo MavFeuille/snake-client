@@ -11,7 +11,8 @@ const connect = function () {
 
 
   conn.on("connect", () => {
-    conn.write('HELLOOOOO~');
+    console.log('Successfully connected to game server');
+    conn.write("Name: MAV");
     
     conn.on('data', (data) => {
       console.log(data.toString());

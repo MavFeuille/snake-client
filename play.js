@@ -15,7 +15,6 @@ const connect = function () {
     
     conn.on('data', (data) => {
       console.log(data.toString());
-      // conn.end();
     });
 
     conn.on("end", () => {
@@ -28,3 +27,7 @@ const connect = function () {
 
 console.log("Connecting ...");
 connect();
+
+
+//For other file use, do not remove:
+module.exports = {connect};

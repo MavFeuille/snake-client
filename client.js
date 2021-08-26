@@ -1,25 +1,28 @@
 const net = require("net");
 
 
+const { IP, PORT } = require('./constants');
+
+
 const connect = function () {
   const conn = net.createConnection({
-    host: '135.23.223.133',
-    port: '50542'
+    host: IP,
+    port: PORT
   });
 
   conn.setEncoding("utf8");
 
   
   conn.on("connect", () => {
-    conn.write('Name: MAV');
-
-
-    conn.on("connect", () => {
-      console.log("Succesfully connected to game server")
-    })
+    console.log("Successfully connected to game server")
+    conn.write('Name: CLS');
+    conn.write
     
 
-
+    conn.on("data", () => {
+      conn.write("Say: @!@#$%")
+    });
+    
     conn.on('data', (data) => {
       console.log(data.toString());
     });
